@@ -1,6 +1,6 @@
 
 ## Demo
-[http://5ad22fe4c6aed64e3cf27f9f.hardcore-snyder-3652c0.netlify.com/](http://5ad22fe4c6aed64e3cf27f9f.hardcore-snyder-3652c0.netlify.com/)
+[https://paymium-test.netlify.com](https://paymium-test.netlify.com)
 
 
 ## Installing a Dependency
