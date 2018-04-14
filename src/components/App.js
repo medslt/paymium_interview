@@ -4,7 +4,6 @@ import axios from 'axios';
 
 import List from './List';
 import Header from './Header';
-import { Container } from 'reactstrap';
 
 import  transactionsLocal  from '../data/transactions';
 
@@ -49,15 +48,13 @@ class App extends Component {
     }
 
     return (
-      <Container>
-        <div className="App">
+        <div className="container-fluid">
          
           <List 
             transactions={transactions}
             {...this.props}
           />
         </div>
-      </Container>
     );
   }
 }
