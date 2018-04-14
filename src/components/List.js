@@ -41,13 +41,13 @@ class List extends React.Component {
         <Row className="text-left bg-light no-gutters" onMouseMove={this._onMouseMove}>
           <Col sm={{ size: 8, offset: 2 }}>
             <Row className="border-bottom p-3">
-              <Col  xs="3"  className="clickable">created at</Col>
-              <Col  xs="2" onClick={this.props.sortTransactions('counterparty_name')} className="clickable">Counterparty Name</Col>
+              <Col  xs="2"  className="clickable">created at</Col>
+              <Col  xs="3" onClick={this.props.sortTransactions('counterparty_name')} className="clickable">Counterparty Name</Col>
               <Col  xs="3" onClick={this.props.sortTransactions('operation_type')} className="clickable">Payment type</Col>
               <Col  xs="4" className="clickable">
                   <Row>
                     <Col  xs="8" onClick={this.props.sortTransactions('amount')}  className="clickable">Amount</Col>
-                    <Col  xs="4" className="clickable text-center"><i class="fa fa-paperclip fa-2x"></i></Col>
+                    <Col  xs="4" className="clickable text-center"><i className="fa fa-paperclip fa-2x"></i></Col>
                   </Row>
               </Col>
             </Row>

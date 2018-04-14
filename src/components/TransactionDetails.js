@@ -64,7 +64,7 @@ class TransactionDetails extends React.Component {
                 </Row>
                 <section className="bg-white d-flex h-100 justify-content-center align-items-center">
                     { 
-                        transactionsToDisplay ? this.transactionsDetails() : (<div>Click on one or several transactions to see details </div>)
+                        transactionsToDisplay ? this.transactionsDetails() : (<div>Select  one or several transactions to see details </div>)
                     }
                     
                 </section>
