@@ -58,13 +58,14 @@ class TransactionDetails extends React.Component {
         const transactionsToDisplay = this.props.transactionsToDisplay;
 
         return (
-            <aside className="bg-white w-100 h-100">
+            
+            <aside className="bg-white w-100 h-100 mh-100 oveoverflow-hidden">
                 <Row className="no-gutters">
                     <Col className="bg-light min-h-100">  </Col> 
                 </Row>
                 <section className="bg-white d-flex h-100 justify-content-center align-items-center">
                     { 
-                        transactionsToDisplay ? this.transactionsDetails() : (<div>Press the Shift key + Select  one or several transactions to see details </div>)
+                        transactionsToDisplay ? this.transactionsDetails() : (<div className="text-center">Press the Shift key + Select  one or several transactions to see details </div>)
                     }
                     
                 </section>

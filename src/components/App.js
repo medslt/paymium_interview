@@ -5,8 +5,6 @@ import axios from 'axios';
 import List from './List';
 import Menu from './Menu';
 import TransactionDetails from './TransactionDetails';
-
-import  transactionsLocal  from '../data/transactions';
 import {Row, Col } from 'reactstrap';
 
 class App extends Component {
@@ -27,16 +25,15 @@ class App extends Component {
   }
 
   fetchTransactions = async () => {
-    console.log('fetching data ...');
+      console.log('fetching data ...');
 
-    //Api doesn't work !!!! use data in local 
-
-      // const url = 'https://private-3f9656-paymiuminterviews.apiary-mock.com/transactions';
-
-      // const result = await axios.get(url);
-
-      // const transactions = [...result.data.data.results];
-      return transactionsLocal[0].transactions;
+      const url = 'https://private-3f9656-paymiuminterviews.apiary-mock.com/transactions';
+      
+      const result = await axios.get(url);
+      
+      const transactions = [...result.data[0].transactions];
+      
+      return transactions;
       
   }
 
