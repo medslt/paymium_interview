@@ -5,3 +5,7 @@
 .clickable{
   cursor: pointer;
 } 
+
+.center {
+  margin: auto;
+}

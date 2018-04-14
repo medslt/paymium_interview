@@ -1,13 +1,12 @@
 import React from 'react';
 import Transaction from './Transaction';
 
-import { CardColumns } from 'reactstrap';
 import {Row, Col } from 'reactstrap';
 
 class List extends React.Component {
   render() {
     console.log('pros', this.props)
-    const {transactions} = this.props;
+    const {transactions, onCickTransactionRow} = this.props;
     
     if (!transactions || !transactions.length ) {
         return '';
@@ -16,10 +15,10 @@ class List extends React.Component {
 
     return (
      <section>
-        <Row >
+        <Row className="no-gutters">
             <Col className="bg-warning min-h-100">  </Col> 
         </Row>
-        <Row className="text-left bg-light ">
+        <Row className="text-left bg-light no-gutters">
           <Col sm={{ size: 8, offset: 2 }}>
             <Row className="border-bottom p-3">
               <Col  xs="3" className="clickable">created at</Col>
@@ -38,6 +37,7 @@ class List extends React.Component {
                 key={transaction.id}
                 transaction={transaction}
                 {...this.props}
+                onCickTransactionRow={onCickTransactionRow}
               />
             ))
             }

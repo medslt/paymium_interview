@@ -3,13 +3,16 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 import List from './List';
-import Header from './Header';
+import Menu from './Menu';
+import TransactionDetails from './TransactionDetails';
 
 import  transactionsLocal  from '../data/transactions';
+import {Row, Col } from 'reactstrap';
 
 class App extends Component {
   state = {
     transactions: [],
+    transactionsToDisplay: null,
     isLoading: false,
   };
 
@@ -40,8 +43,12 @@ class App extends Component {
       
   }
 
+  onCickTransactionRow = (transaction) => () => {
+    this.setState({transactionsToDisplay: [transaction]});
+  }
+
   render() {
-    const { transactions, isLoading } = this.state;
+    const { transactions, isLoading, transactionsToDisplay} = this.state;
 
     if (isLoading) {
       return (<p>Loading ...</p>);
@@ -49,11 +56,25 @@ class App extends Component {
 
     return (
         <div className="container-fluid">
-         
-          <List 
-            transactions={transactions}
-            {...this.props}
-          />
+          <Row className="no-gutters">
+            <Col md="2" >
+              <Menu/>
+            </Col>
+            <Col md="7">
+              <List 
+                  transactions={transactions}
+                  onCickTransactionRow={this.onCickTransactionRow}
+                  {...this.props}
+                />
+            </Col>
+            <Col md="3">
+              <TransactionDetails
+                transactionsToDisplay={transactionsToDisplay}
+              />
+            </Col>
+             
+              
+          </Row>
         </div>
     );
   }
