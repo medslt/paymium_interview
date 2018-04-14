@@ -15,7 +15,6 @@ class List extends React.Component {
   }
 
   handleSelection = (selectedTransactions) => {
-    console.log(selectedTransactions);
   	this.props.setTransactionsToDisplay(selectedTransactions);
   }
 

@@ -22,9 +22,6 @@ class App extends Component {
     this.setState({ isLoading: true });
     const transactions = await this.fetchTransactions();
 
-    console.log('transactions', transactions);
-    
-
     const isLoading = false;
     this.setState({transactions, isLoading});
   }
