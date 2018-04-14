@@ -6,6 +6,7 @@ import List from './List';
 import Menu from './Menu';
 import TransactionDetails from './TransactionDetails';
 import {Row, Col } from 'reactstrap';
+import  transactionsLocal  from '../data/transactions';
 
 class App extends Component {
   state = {
@@ -29,9 +30,18 @@ class App extends Component {
 
       const url = 'https://private-3f9656-paymiuminterviews.apiary-mock.com/transactions';
       
-      const result = await axios.get(url);
+     let transactions;
+
+      try {
+        const result = await axios.get(url);
+       transactions = [...result.data[0].transactions];
+      } catch (error) {
+        //Api doesn't work !!!! use data in local 
+
+        transactions = transactionsLocal[0].transactions;
+        
+      }
       
-      const transactions = [...result.data[0].transactions];
       
       return transactions;
       
