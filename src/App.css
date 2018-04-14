@@ -2,10 +2,41 @@
 .min-h-100{
   min-height: 100px;
 }
+
+.min-h-200{
+  min-height: 200px;
+}
+
+.h-100px{
+  height: 100px;
+}
 .clickable{
   cursor: pointer;
 } 
 
 .center {
   margin: auto;
+}
+
+.color1{
+  color: #fbfbfd3d;
+}
+
+.m-b-20{
+  margin-bottom: 20px
+}
+
+.border-bottom-color1 {
+
+  border-bottom-color: #fbfbfd3d !important;
+}
+
+html, body { 
+  margin:0; 
+  padding:0; 
+  min-heigh:100%; 
+}
+
+#rout{
+  min-height: 100%;
 }

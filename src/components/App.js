@@ -62,9 +62,9 @@ class App extends Component {
     }
 
     return (
-        <div className="container-fluid" onClick={ (e)=>{ !e.shiftKey &&  this.setTransactionsToDisplay(null)} }>
-          <Row className="no-gutters">
-            <Col md="2" >
+        <div className="container-fluid h-100" onClick={ (e)=>{ !e.shiftKey &&  this.setTransactionsToDisplay(null)} }>
+          <Row className="no-gutters h-100">
+            <Col md="2" className="h-100" >
               <Menu/>
             </Col>
             <Col md="7">
