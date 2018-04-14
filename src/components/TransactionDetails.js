@@ -7,6 +7,23 @@ import { Table } from 'reactstrap';
 class TransactionDetails extends React.Component {
 
     transactionsDetails = (props) => {
+    const transactionsToDisplay = this.props.transactionsToDisplay;
+    if (transactionsToDisplay.length === 1) {
+        return this.oneTransactionDetails(props);
+    } 
+
+    const ids =  this.props.transactionsToDisplay.map(transaction => transaction.id);
+
+    return (
+        <div className="text-center">
+            <h3>Ids of selected transactions</h3>
+            <p> {ids.join(', ')} </p>
+        </div>
+        );
+    
+    }
+
+    oneTransactionDetails = (props) => {
         const transactionsToDisplay = this.props.transactionsToDisplay;
         const transaction = transactionsToDisplay[0];
         return (
@@ -46,8 +63,8 @@ class TransactionDetails extends React.Component {
                     <Col className="bg-light min-h-100">  </Col> 
                 </Row>
                 <section className="bg-white d-flex h-100 justify-content-center align-items-center">
-                    { transactionsToDisplay ? this.transactionsDetails() : (<div>Click on one or several transactions to see details </div>)
-
+                    { 
+                        transactionsToDisplay ? this.transactionsDetails() : (<div>Click on one or several transactions to see details </div>)
                     }
                     
                 </section>

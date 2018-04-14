@@ -43,8 +43,8 @@ class App extends Component {
       
   }
 
-  onCickTransactionRow = (transaction) => () => {
-    this.setState({transactionsToDisplay: [transaction]});
+  setTransactionsToDisplay = (transactions) => {
+    this.setState({transactionsToDisplay: transactions});
   }
 
   render() {
@@ -55,7 +55,7 @@ class App extends Component {
     }
 
     return (
-        <div className="container-fluid">
+        <div className="container-fluid" onClick={ (e)=>{ !e.shiftKey &&  this.setTransactionsToDisplay(null)} }>
           <Row className="no-gutters">
             <Col md="2" >
               <Menu/>
@@ -63,7 +63,8 @@ class App extends Component {
             <Col md="7">
               <List 
                   transactions={transactions}
-                  onCickTransactionRow={this.onCickTransactionRow}
+                  setTransactionsToDisplay={this.setTransactionsToDisplay}
+                  transactionsToDisplay={transactionsToDisplay}
                   {...this.props}
                 />
             </Col>

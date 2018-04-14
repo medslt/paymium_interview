@@ -9,10 +9,10 @@ class Transaction extends React.Component {
 
  
    render() {
-    const transaction = this.props.transaction;
+    const {transaction, selected} = this.props;
 
     return (
-      <Row className="border-bottom p-3 clickable" onClick={this.props.onCickTransactionRow(transaction)}>
+      <Row className={`border-bottom p-3 ${selected ? 'bg-secondary' : ''}`}>
         <Col xs="3">{ (new Date(transaction.created_at)).toISOString().slice(0,10)  }</Col>
         <Col xs="3">{ transaction.counterparty_name }</Col>
         <Col xs="3">{ transaction.operation_type }</Col>
