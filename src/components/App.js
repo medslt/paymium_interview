@@ -43,6 +43,16 @@ class App extends Component {
       
   }
 
+  sortTransactions = (sortBy) => (e) => {
+      let transactions = [...this.state.transactions];
+
+      
+      transactions.sort((trA, trB)  => {
+          return (trA[sortBy] < trB[sortBy] ? 1 : -1);
+      });
+      this.setState({transactions});
+  }
+
   setTransactionsToDisplay = (transactions) => {
     this.setState({transactionsToDisplay: transactions});
   }
@@ -64,6 +74,7 @@ class App extends Component {
               <List 
                   transactions={transactions}
                   setTransactionsToDisplay={this.setTransactionsToDisplay}
+                  sortTransactions={this.sortTransactions}
                   transactionsToDisplay={transactionsToDisplay}
                   {...this.props}
                 />
