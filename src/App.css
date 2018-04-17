@@ -1,3 +1,18 @@
+html{
+  margin:0;
+  padding:0;
+  height:100%; 
+}
+
+ body { 
+  margin:0; 
+  padding:0; 
+  min-height:100%; 
+}
+
+html, body {
+  overflow: auto;
+}
 
 .min-h-100{
   min-height: 100px;
@@ -23,7 +38,7 @@
 }
 
 .m-b-20{
-  margin-bottom: 20px
+  margin-bottom: 20px;
 }
 
 .border-bottom-color1 {
@@ -31,14 +46,10 @@
   border-bottom-color: #fbfbfd3d !important;
 }
 
-html, body { 
-  margin:0; 
-  padding:0; 
-  min-heigh:100%; 
-}
+
 
 #rout{
-  min-height: 100%;
+  min-height: 1060px;
 }
 
 .oveoverflow-hidden{
